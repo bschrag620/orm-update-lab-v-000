@@ -33,6 +33,6 @@ class Student
     SQL
     
     DB[:conn].execute(sql, @name, @grade)
-    @id = DB[:conn].
+    @id = DB[:conn].last_insert_row_id
   end
 end
