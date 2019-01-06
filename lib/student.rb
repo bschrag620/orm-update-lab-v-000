@@ -25,4 +25,14 @@ class Student
       DROP TABLE students
     SQL
   end
+  
+  def save
+    sql = <<-SQL
+      INSERT INTO students (name, grade)
+      VALUES ?, ?
+    SQL
+    
+    DB[:conn].execute(sql, @name, @grade)
+    @id = DB[:conn].
+  end
 end
